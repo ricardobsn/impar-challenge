@@ -1,28 +1,31 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import "./Header.css"
 
 function Header() {
     return (
         <div className='header'>
-            <img
-                className='header_logo'
-                src="https://impar.com.br/img/inpartec-logo.svg"
-            />
+            <Link to='/'>
+                <img
+                    className='header_logo'
+                    src="https://impar.com.br/img/inpartec-logo.svg"
+                />
+            </Link>
             <div className="header_nav">
                 <div className="header_option">
-                    <span className="header_comands">
+                    <h3 className="header_comands">
                         Notícias em Aprovação
-                    </span>
+                    </h3>
                 </div>
                 <div className="header_option">
-                    <span className="header_comands">
+                    <h3 className="header_comands">
                         Notícias Reprovadas
-                    </span>
+                    </h3>
                 </div>
                 <div className="header_option">
-                    <span className="header_comands">
-                        Cadastrar Notícia
-                    </span>
+                    <h3 className="header_comands">
+                        <Link to='/cadastro'> Cadastrar Notícia </Link>
+                    </h3>
                 </div>
             </div>
         </div>

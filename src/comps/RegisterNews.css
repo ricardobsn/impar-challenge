@@ -1,0 +1,36 @@
+.register {
+    padding: 20px;
+    margin: 30px;
+    justify-content: center;
+    display: flex;
+    max-width: 1500px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.register_input {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 20px;
+}
+
+.register_input > input {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.description_input {
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;}
+
+.button_input {
+    background-color: orange;
+    border-radius: 10px;
+    height: 50px;
+    color: purple;
+    font-size: medium;
+    font-weight: 700;
+}

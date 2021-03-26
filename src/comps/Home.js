@@ -9,7 +9,11 @@ function Home() {
             <div className="home_container">
                 <h3 style={{marginLeft: 20}}>Central de Notícias:</h3>
                 <div className="home_row">
-                    <News />
+                    <News
+                     title="Seja um desenvolvedor"
+                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                     newsDate="05/07/2020"
+                    />
                     <News />
                 </div>
             </div>
