@@ -1,0 +1,14 @@
+.home {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+    max-width: 1500px;
+    background-color: lightgray;
+}
+
+.home_row {
+    display: flex;
+    margin-left: 5px;
+    margin-right: 5px;
+}
