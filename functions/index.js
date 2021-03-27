@@ -20,15 +20,12 @@ app.options('*', cors());
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
-// API routes
-app.get("/", (req, res) => res.status(200).send("hello world"));
 
-app.post("/news", (req, res) => {
-    const newNews = req.body
-    console.log("@@@@",newNews)
-   
-    res.send(newNews);
-})
+//Routers
+const newsRouter = require('./routes/news');
+
+app.use("/news", newsRouter);
+
 
 mongoose.connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'impar-news', useFindAndModify: false }).then(() => {
     console.log("conexão feita com sucesso")
