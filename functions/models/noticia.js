@@ -11,12 +11,10 @@ const noticiaSchema = mongoose.Schema({
         required: true
     },
     uf: {
-        type: String,
-        required: true
+        type: String
     },
     city: {
-        type: String,
-        required: true
+        type: String
     },
     dateNews: {
         type: Date,

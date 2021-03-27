@@ -30,6 +30,8 @@ function WaitingAprovation() {
                             id={n.id}
                             title={n.title}
                             description={n.description}
+                            uf={n.uf}
+                            city={n.city}
                             newsDate={moment(n.dateNews).format("DD/MM/YYYY")}
                             waitingAprovation={true}
                         />

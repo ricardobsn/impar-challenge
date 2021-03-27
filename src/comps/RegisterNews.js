@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import "./RegisterNews.css"
 import axios from "../axios";
+import { useStatevalue } from "../StateProvider";
 
 
-function RegisterNews() {
+function RegisterNews({ pageTitle }) {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -14,6 +15,10 @@ function RegisterNews() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (title === "" || description === "") {
+            alert("Preenchimento obrigatório dos campos Título e Descrição")
+        }
+
         const response = await axios({
             method: "post",
             url: "/news",
@@ -45,7 +50,7 @@ function RegisterNews() {
     return (
         <div className="register">
             <div className="register_description">
-                <h2>Cadastro de Notícias</h2>
+                <h2>{pageTitle}</h2>
                 <p className="register_descriptionDetailed">Descreva detalhadamente uma notícia para que todos possam saber o que está acontecendo.</p>
             </div>
             <div className="register_input">
@@ -61,5 +66,9 @@ function RegisterNews() {
         </div>
     )
 }
+
+RegisterNews.defaultProps = {
+    pageTitle: "Cadastro de Notícias",
+};
 
 export default RegisterNews
