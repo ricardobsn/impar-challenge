@@ -60,6 +60,31 @@ router.put('/:id', async (req, res) => {
 
 })
 
+router.put('/get/aprovetion/:id', async (req, res) => {
+    const news = await Noticia.findByIdAndUpdate(req.params.id, {
+        aproved: true
+    },
+        { new: true })
+
+    if (!news)
+        return res.status(404).send('Notícia não foi atualizada')
+
+    res.send(news);
+
+})
+router.put('/get/rejection/:id', async (req, res) => {
+    const news = await Noticia.findByIdAndUpdate(req.params.id, {
+        rejected: true
+    },
+        { new: true })
+
+    if (!news)
+        return res.status(404).send('Notícia não foi rejeitada')
+
+    res.send(news);
+
+})
+
 router.post('/', async (req, res) => {
 
     let news = new Noticia({
@@ -75,6 +100,26 @@ router.post('/', async (req, res) => {
         return res.status(404).send('Notícia não foi criada')
 
     res.send(news);
+})
+
+router.get('/get/aprovetion', async (req, res) => {
+    const status = await Noticia.find({ aproved: false })
+
+    if (!status) {
+        res.status(500).json({ success: false })
+    }
+
+    res.send(status);
+})
+
+router.get('/get/rejected', async (req, res) => {
+    const status = await Noticia.find({ rejected: true })
+
+    if (!status) {
+        res.status(500).json({ success: false })
+    }
+
+    res.send(status);
 })
 
 

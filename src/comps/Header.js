@@ -14,7 +14,7 @@ function Header() {
             <div className="header_nav">
                 <div className="header_option">
                     <h3 className="header_comands">
-                        Notícias em Aprovação
+                        <Link to='/aprovacao'>  Notícias em Aprovação  </Link>
                     </h3>
                 </div>
                 <div className="header_option">
