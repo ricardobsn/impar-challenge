@@ -20,8 +20,6 @@ function Home() {
         getNews();
     }, []);
 
-    console.log("!!!!!!!!!!!", news)
-
     return (
         <div className="home">
             <div className="home_container">

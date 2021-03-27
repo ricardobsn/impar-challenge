@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import "./RegisterNews.css"
+import axios from "../axios";
 
-function RegisterNews({news}) {
+
+function RegisterNews() {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -9,20 +11,51 @@ function RegisterNews({news}) {
     const [city, setCity] = useState("");
     const [newsDate, setNewsDate] = useState("");
 
-    const handleSubmit = (e) => {
-        // e.preventDefault();
-        // db.collection("posts").add({
-        //   message: input,
-        //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        //   profilePic: user.photoURL,
-        //   userName: user.displayName,
-        //   image: imageUrl,
-        // });
-        setTitle("");
-        setDescription("");
-        setUf("");
-        setCity("");
-        setNewsDate("");
+
+
+    // useEffect(() => {
+    //     const getNews = async () => {
+    //         const response = await axios({
+    //             method: "get",
+    //             url: "/news",
+    //             data: cep,
+    //             headers: { "content-type": "application/json" },
+    //             json: true
+    //         });
+    //         setNews(response.data);
+    //     };
+    //     getNews();
+    // }, []);
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const response = await axios({
+            method: "post",
+            url: "/news",
+            data: {
+                title,
+                description,
+                uf,
+                city,
+                dateNews: newsDate
+            },
+            headers: { "content-type": "application/json" },
+            json: true
+        })
+            .then(res => {
+                if (res.status === 200) {
+                    setTitle("");
+                    setDescription("");
+                    setUf("");
+                    setCity("");
+                    setNewsDate("");
+                    console.log("SALVOU!!!!")
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
     };
 
     return (
