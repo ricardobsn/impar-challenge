@@ -12,22 +12,6 @@ function RegisterNews() {
     const [newsDate, setNewsDate] = useState("");
 
 
-
-    // useEffect(() => {
-    //     const getNews = async () => {
-    //         const response = await axios({
-    //             method: "get",
-    //             url: "/news",
-    //             data: cep,
-    //             headers: { "content-type": "application/json" },
-    //             json: true
-    //         });
-    //         setNews(response.data);
-    //     };
-    //     getNews();
-    // }, []);
-
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await axios({
@@ -50,7 +34,7 @@ function RegisterNews() {
                     setUf("");
                     setCity("");
                     setNewsDate("");
-                    console.log("SALVOU!!!!")
+                    alert("Notícia salva com sucesso!")
                 }
             })
             .catch(error => {

@@ -27,6 +27,7 @@ function Home() {
                 <div className="home_row">
                     {news && news.map((n) => (
                         <News
+                            id={n.id}
                             title={n.title}
                             description={n.description}
                             newsDate={moment(n.dateNews).format("DD/MM/YYYY")}
