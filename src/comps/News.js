@@ -4,8 +4,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import axios from "../axios";
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import { green } from '@material-ui/core/colors';
-
 
 function News({ title, description, newsDate, id, waitingAprovation }) {
 
@@ -72,8 +70,8 @@ function News({ title, description, newsDate, id, waitingAprovation }) {
                 <p> {description} </p>
                 <p style={{ fontSize: 20, fontWeight: 500 }}>DATA: <small>{newsDate}</small> </p>
                 {waitingAprovation && (<div className="news_aprovation">
-                    <ThumbUpIcon  onClick={() => aproveNews(id)} style={{marginRight:20}}/>
-                    <ThumbDownIcon  onClick={() => rejectNews(id)} />
+                    <ThumbUpIcon onClick={() => aproveNews(id)} style={{ marginRight: 20 }} />
+                    <ThumbDownIcon onClick={() => rejectNews(id)} />
                 </div>)}
             </div>
 
