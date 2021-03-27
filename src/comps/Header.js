@@ -19,7 +19,7 @@ function Header() {
                 </div>
                 <div className="header_option">
                     <h3 className="header_comands">
-                        Notícias Reprovadas
+                        <Link to='/rejeitadas'>   Notícias Reprovadas </Link>
                     </h3>
                 </div>
                 <div className="header_option">
