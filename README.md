@@ -30,7 +30,7 @@ $ npm install ou yarn<br />
 Feito isso, as dependências do Frontend estarão instaladas. Agora, bastar executar o comando abaixo e abrirá uma aba no seu browser principal com o projeto rodando.<br />
 $ yarn start<br /><br />
 
-Agora é preciso instalar as dependências do Backend, para isso<br />
+Agora é preciso instalar as dependências do Backend, para isso é necessário entrr na pasta functions (backend do projeto)<br />
 $ cd functions<br />
 $ npm install<br />
 Para rodar em dev digite:<br />
@@ -40,3 +40,6 @@ Testes<br />
 Para execução de testes automatizados, na raiz do projeto execute:<br />
 <br />
 $ npm test<br />
+
+O projeto foi feito utilizando React para o frontend e Node para o backend. O banco utilizado foi o mongoDb. <br />
+O Firebase foi utilizado a parte de cloud functions e deploy.  
