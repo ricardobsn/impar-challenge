@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 import "./style.css"
 import axios from "../../axios";
+import { ToastContainer, toast, Zoom } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 function RegisterNews() {
-    
+
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [uf, setUf] = useState("");
     const [city, setCity] = useState("");
     const [newsDate, setNewsDate] = useState("");
-   
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (title === "" || description === "") {
-            alert("Preenchimento obrigatório dos campos Título e Descrição")
+            toast.info("Preenchimento obrigatório dos campos Título e Descrição")
         }
         const response = await axios({
             method: "post",
@@ -34,16 +37,17 @@ function RegisterNews() {
                     setUf("");
                     setCity("");
                     setNewsDate("");
-                    alert("Notícia salva com sucesso!")
+                    toast.success("Notícia salva com sucesso!")
                 }
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error);
             });
     };
 
     return (
         <div className="register">
+            <ToastContainer draggable={false} transition={Zoom} autoClose={6000} />
             <div className="register_description">
                 <h2>Cadastro de Notícias</h2>
                 <p className="register_descriptionDetailed">Descreva detalhadamente uma notícia para que todos possam saber o que está acontecendo.</p>

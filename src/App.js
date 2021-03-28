@@ -7,10 +7,12 @@ import EditNews from './components/EditNews'
 import RejectedNews from './components/RejectedNews'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { useStatevalue } from "./StateProvider";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
   const [{ news }, dispatch] = useStatevalue();
+
 
   return (
     <Router>
@@ -24,7 +26,7 @@ function App() {
             <WaitingAprovation />
           </Route>
           <Route path='/edit'>
-            <EditNews news={news}/>
+            <EditNews news={news} />
           </Route>
           <Route path='/rejeitadas'>
             <RejectedNews />

@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import "../RegisterNews/style.css"
 import axios from "../../axios";
+import { ToastContainer, toast, Zoom } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 function EditNews({ news }) {
 
     const editSubmit = (id) => {
         if (title === "" || description === "") {
-            alert("Preenchimento obrigatório dos campos Título e Descrição")
+            toast.info("Preenchimento obrigatório dos campos Título e Descrição")
         }
         axios({
             method: "put",
@@ -26,11 +28,11 @@ function EditNews({ news }) {
                     setDescription("");
                     setUf("");
                     setCity("");
-                    alert("Notícia atualizada com sucesso!")
+                    toast.success("Notícia atualizada com sucesso!")
                 }
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error);
             });
     };
 
@@ -41,6 +43,7 @@ function EditNews({ news }) {
 
     return (
         <div className="register">
+            <ToastContainer draggable={false} transition={Zoom} autoClose={6000} />
             <div className="register_input">
                 <input value={title} className='registerTitle_input' type='text' onChange={(e) => { setTitle(e.target.value) }} placeholder="Título da Notícia" />
                 <textarea value={description} className='description_input' onChange={(e) => { setDescription(e.target.value) }} placeholder="Descrição" />
