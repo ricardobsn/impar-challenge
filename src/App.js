@@ -3,10 +3,15 @@ import Header from './components/Header'
 import Home from './components/Home'
 import RegisterNews from './components/RegisterNews'
 import WaitingAprovation from './components/WaitingAprovation'
+import EditNews from './components/EditNews'
 import RejectedNews from './components/RejectedNews'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { useStatevalue } from "./StateProvider";
 
 function App() {
+
+  const [{ news }, dispatch] = useStatevalue();
+
   return (
     <Router>
       <div className="App">
@@ -17,6 +22,9 @@ function App() {
           </Route>
           <Route path='/aprovacao'>
             <WaitingAprovation />
+          </Route>
+          <Route path='/edit'>
+            <EditNews news={news}/>
           </Route>
           <Route path='/rejeitadas'>
             <RejectedNews />

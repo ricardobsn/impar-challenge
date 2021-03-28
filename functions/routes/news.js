@@ -46,10 +46,7 @@ router.put('/:id', async (req, res) => {
         title: req.body.title,
         description: req.body.description,
         uf: req.body.uf,
-        city: req.body.city,
-        dateNews: req.body.dateNews,
-        aproved: req.body.aproved,
-        rejected: req.body.rejected,
+        city: req.body.city
     },
         { new: true })
 
@@ -103,7 +100,7 @@ router.post('/', async (req, res) => {
 })
 
 router.get('/get/aprovetion', async (req, res) => {
-    const status = await Noticia.find({ aproved: false })
+    const status = await Noticia.find({ aproved: false , rejected: false})
 
     if (!status) {
         res.status(500).json({ success: false })

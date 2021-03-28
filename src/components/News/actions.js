@@ -53,15 +53,3 @@ export const rejectNews = (id) => {
             console.log(error);
         });
 }
-
-// export const editNews = () => {
-//     dispatch({
-//         type: "SET_NEWS", news: {
-//             title,
-//             description,
-//             uf,
-//             city,
-//             dateNews: newsDate
-//         }
-//     })
-// }
