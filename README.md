@@ -1,18 +1,18 @@
 Desenvolvimento
-Tecnologias Utilizadas
-HTML 5
-CSS3
-React
-React Hooks
-Node
-MongoDb
-Firebase
-Jest
-Material UI
-ESlint
-Babel
+Tecnologias Utilizadas:
+HTML 5,
+CSS3,
+React,
+React Hooks,
+Node,
+MongoDb,
+Firebase,
+Jest,
+Material UI,
+ESlint,
+Babel,
 
-Pré-requisitos
+Pré-requisitos:
 Para execução e desenvolvimento do projeto é necessário possuir o Node instalado em sua máquina e o firebase.
 $ npm install -g firebase-tools
 
