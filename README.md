@@ -1,4 +1,7 @@
-Desenvolvimento <br />
+Desenvolvimento <br /><br/>
+
+Versão deploy com firebase acesse: https://impar-challenge.web.app/ <br/><br/>
+
 Tecnologias Utilizadas: <br />
 HTML 5<br />
 CSS3<br />
@@ -13,11 +16,11 @@ ESlint<br />
 Babel<br />
 
 Pré-requisitos: <br />
-Para execução e desenvolvimento do projeto é necessário possuir o Node instalado em sua máquina e o firebase. <br />
+Para execução localmente e desenvolvimento do projeto é necessário possuir o Node instalado em sua máquina e o firebase. <br />
 $ npm install -g firebase-tools<br /><br />
 
 Setup Dev<br />
-Para ver o projeto rodando, primeiro clone o repositório.<br /><br />
+Para ver o projeto localmente, primeiro clone o repositório.<br /><br />
 
 $ git clone https://github.com/ricardobsn/impar-challenge.git<br />
 Navegue até o diretório e instale as dependências do projeto.<br />
@@ -34,6 +37,6 @@ Para rodar em dev digite:<br />
 $ firebase emulators:start<br />
 <br />
 Testes<br />
-Para execução de testes automatizados, basta executar<br />
+Para execução de testes automatizados, na raiz do projeto execute:<br />
 <br />
 $ npm test<br />
