@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
-import "./RegisterNews.css"
-import axios from "../axios";
-import { useStatevalue } from "../StateProvider";
+import "./style.css"
+import axios from "../../axios";
+import { useStatevalue } from "../../StateProvider";
 
 
-function RegisterNews({ pageTitle }) {
-
+function RegisterNews(props) {
+    
+    const {pageTitle} = props
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [uf, setUf] = useState("");
     const [city, setCity] = useState("");
     const [newsDate, setNewsDate] = useState("");
 
+    console.log("Ricardo", props)
 
     const handleSubmit = async (e) => {
         e.preventDefault();

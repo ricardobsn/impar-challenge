@@ -1,9 +1,9 @@
 import './App.css';
-import Header from './comps/Header'
-import Home from './comps/Home'
-import RegisterNews from './comps/RegisterNews'
-import WaitingAprovation from './comps/WaitingAprovation'
-import RejectedNews from './comps/RejectedNews'
+import Header from './components/Header'
+import Home from './components/Home'
+import RegisterNews from './components/RegisterNews'
+import WaitingAprovation from './components/WaitingAprovation'
+import RejectedNews from './components/RejectedNews'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 function App() {
@@ -31,7 +31,3 @@ function App() {
 }
 
 export default App;
-
-
-//2:18
-//7:10

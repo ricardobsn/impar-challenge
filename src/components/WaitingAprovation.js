@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import "./Home.css"
+import "./Home/style.css"
 import News from "./News"
 import axios from "../axios";
 import moment from "moment";
 
-function RejectedNews() {
+function WaitingAprovation() {
 
     const [news, setNews] = useState([]);
 
@@ -12,7 +12,7 @@ function RejectedNews() {
         const getNews = async () => {
             const response = await axios({
                 method: "get",
-                url: "/news/get/rejected",
+                url: "/news/get/aprovetion",
             });
             setNews(response.data);
         };
@@ -33,7 +33,7 @@ function RejectedNews() {
                             uf={n.uf}
                             city={n.city}
                             newsDate={moment(n.dateNews).format("DD/MM/YYYY")}
-                            waitingAprovation={false}
+                            waitingAprovation={true}
                         />
                     ))
                     }
@@ -43,4 +43,4 @@ function RejectedNews() {
     )
 }
 
-export default RejectedNews
+export default WaitingAprovation

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import "./Home.css"
-import News from "./News"
-import axios from "../axios";
+import "./style.css"
+import News from "../News"
+import axios from "../../axios";
 import moment from "moment";
 
 
